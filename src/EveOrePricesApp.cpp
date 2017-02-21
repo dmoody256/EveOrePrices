@@ -30,7 +30,7 @@ namespace EveOrePrices
 
 	void EveOrePricesApp::colourWidgets(MyGUI::Widget* widget, const MyGUI::Colour& colour)
 	{
-		widget->setColourcolour);
+		widget->setColour(colour);
 		MyGUI::EnumeratorWidgetPtr enumerator = widget->getEnumerator();
 		while (enumerator.next())
 		{
@@ -40,10 +40,10 @@ namespace EveOrePrices
 
 	void EveOrePricesApp::destroyApp()
 	{
-		if (_DemoView)
+		if (_AppView)
 		{
-			MyGUI::WidgetManager::getInstance().destroyWidget(_DemoView);
-			_DemoView = 0;
+			MyGUI::WidgetManager::getInstance().destroyWidget(_AppView);
+			_AppView = 0;
 		}
 		if (_ComboSkins)
 		{
@@ -61,13 +61,13 @@ namespace EveOrePrices
 
 	void EveOrePricesApp::createScene()
 	{
-		base::BaseDemoManager::createScene();
+		base::BaseManager::createScene();
 		//MyGUI::LayoutManager::getInstance().loadLayout("Wallpaper.layout");
 		
-		createApp(0);
+		createApp();
 	}
 
-	void DemoKeeper::destroyScene()
+	void EveOrePricesApp::destroyScene()
 	{
 		destroyApp();
 	}

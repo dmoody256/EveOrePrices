@@ -1,12 +1,12 @@
 #ifndef EVE_ORE_PRICES_H_
 #define EVE_ORE_PRICES_H_
 
-#include "Base/BaseDemoManager.h"
+#include "BaseManager.h"
 
 namespace EveOrePrices
 {
 
-	class EveOrePricesApp
+	class EveOrePricesApp :
 		public base::BaseManager
 	{
 	public:
